@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('line_two')->nullable();
             $table->string('line_three')->nullable();
             $table->string('landmark')->nullable();
-            $table->string('city');
-            $table->string('postal_code');
+            $table->string('city')->nullable();
+            $table->string('email')->nullable();
+            $table->string('postal_code')->nullable();
             $table->decimal('lattitude', 8, 6)->nullable();
             $table->decimal('longitude', 8, 6)->nullable();
             $table->decimal('altitude', 8, 6)->nullable();

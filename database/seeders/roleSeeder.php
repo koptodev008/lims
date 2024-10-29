@@ -28,9 +28,25 @@ class roleSeeder extends Seeder
         $role = Role::create([
             'name' => $roleName
         ]);
+
+       
         
         $superAdminUser = \App\Models\User::create([
             'name' => 'Super Admin',
+            'email' => 'superadmin@koptotech.com',
+            'password' => bcrypt('Admin@123'),
+            'phone' => '7057121459',
+            'role' => $role->id // Store the role's id here
+        ]);
+
+        $roleName = 'Owner';
+        $role = Role::create([
+            'name' => $roleName
+        ]);
+        
+
+        $AdminUser = \App\Models\User::create([
+            'name' => 'Admin',
             'email' => 'admin@koptotech.com',
             'password' => bcrypt('Admin@123'),
             'phone' => '7057121459',
